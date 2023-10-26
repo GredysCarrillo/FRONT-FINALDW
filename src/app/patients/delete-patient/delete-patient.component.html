@@ -1,0 +1,11 @@
+<div class="p-4">
+  <h1 class="text-2xl font-semibold mb-4">Confirmar Eliminación de Paciente</h1>
+  <div class="bg-white p-4 shadow rounded-lg">
+    <p class="text-red-500 font-semibold text-center">¿Estás seguro de que deseas eliminar a este paciente?</p>
+    <p class="text-center mb-4">Esta acción no se puede deshacer y todos los datos del paciente se perderán.</p>
+    <div class="flex justify-center">
+      <button (click)="deletePatient()" class="bg-red-500 text-white py-2 px-4 rounded-lg mr-4 hover:bg-red-600">Eliminar</button>
+      <a href="/dashboard/patients" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400">Cancelar</a>
+    </div>
+  </div>
+</div>

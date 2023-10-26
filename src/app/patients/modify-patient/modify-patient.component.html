@@ -1,0 +1,32 @@
+<div class="p-4">
+  <h1 class="text-2xl font-semibold mb-4">Modificar Paciente</h1>
+  <div class="bg-white p-4 shadow rounded-lg">
+    <form (ngSubmit)="updatePatient()">
+
+      <!-- Datos personales -->
+   <!-- Datos personales -->
+<div class="mb-4">
+  <h2 class="text-lg font-semibold">Datos del Paciente</h2>
+  <label for="name" class="block">Nombre</label>
+  <input type="text" id="name" name="name" class="w-full border p-2 rounded-lg mb-2" [(ngModel)]="patient.name">
+  <label for="age" class="block">Edad</label>
+  <input type="text" id="age" name="age" class="w-full border p-2 rounded-lg mb-2" [(ngModel)]="patient.age">
+  <label for="admissionDate" class="block">Fecha de Alta</label>
+  <input type="date" id="admissionDate" name="admissionDate" class="w-full border p-2 rounded-lg" [(ngModel)]="patient.date">
+  <label for="gender" class="block">Sexo</label>
+  <select id="gender" name="gender" class="w-full border p-2 rounded-lg" [(ngModel)]="patient.gender">
+    <option value="masculino">Masculino</option>
+    <option value="femenino">Femenino</option>
+    <option value="otro">Otro</option>
+  </select>
+</div>
+
+     <div class="mb-4">
+  <h2 class="text-lg font-semibold">Observaciones</h2>
+  <input name="history" class="w-full p-2 border rounded-lg" type="text" [(ngModel)]="newMedicalHistory" placeholder=".">
+</div>
+      <!-- Botón para enviar el formulario de modificación -->
+      <button (click)="addMedicalHistory()" (click)="addAlergias()" type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Modificar Paciente</button>
+    </form>
+  </div>
+</div>

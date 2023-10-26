@@ -1,0 +1,30 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+  <div class="w-full max-w-md p-4 bg-white shadow-2xl rounded-md">
+  <form class="max-w-md mx-auto bg-white rounded-lg shadow-2xl p-6" (ngSubmit)="entrar()">
+    <div class="text-center">
+      <img src="https://media.istockphoto.com/id/1142319635/es/vector/conjunto-de-medicamentos-de-dibujos-animados.jpg?s=1024x1024&w=is&k=20&c=NcpnWMHbZwHiuWUsVT5idSqnzGONc90cMsqojMDv5K8=" alt="Avatar" class="w-16 h-16 mx-auto rounded-full">
+    </div>
+    <div class="my-4">
+      <label for="email" class="block font-bold mb-1">Ingresa tu email</label>
+      <input [(ngModel)]="user.email" type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required
+        class="w-full py-2 px-3 border rounded focus:outline-none focus:ring focus:border-blue-500">
+    </div>
+    <div class="my-4">
+      <label for="password" class="block font-bold mb-1">Contraseña</label>
+      <input [(ngModel)]="user.password" type="password" id="password" name="password" placeholder="Ingrese su contraseña" required
+        class="w-full py-2 px-3 border rounded focus:outline-none focus:ring focus:border-blue-500">
+    </div>
+
+    <div class="my-4">
+      <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-200">
+        Iniciar Sesión
+      </button>
+    </div>
+    <div class="text-right my-4">
+      <p style="cursor: pointer;" routerLink="/register" routerLinkActive="router-link-active"  class="text-sm text-center text-gray-400">
+        ¿No tienes una cuenta? <a class="text-indigo-600 hover:text-indigo-500">Regístrate</a>
+     
+    </div>
+    <div class="text-center text-red-600" *ngIf="showError2">Debes llenar todos los campos</div>
+  </form>
+</div>

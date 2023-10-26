@@ -1,0 +1,41 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-xl p-4 bg-white shadow-md rounded-md">
+      <h1 class="text-2xl font-bold text-center text-gray-700">Completa tu información</h1>
+      <form class="mt-4" (submit)="actualizar()" enctype="multipart/form-data">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-600" for="direccion">Dirección</label>
+            <input [(ngModel)]="user.address" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" type="text" name="direccion" id="direccion" placeholder="Ingresa tu dirección" required>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-600" for="telefono">Teléfono</label>
+            <input [(ngModel)]="user.phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" type="text" name="telefono" id="telefono" placeholder="Ingresa tu teléfono" required>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-600" for="rol">Titulo</label>
+            <input [(ngModel)]="user.title" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" type="text" name="rol" id="rol" placeholder="Ingresa ultimo titulo obtenido">
+          </div>
+          <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-600" for="birth_date">Fecha de nacimiento</label>
+              <input [(ngModel)]="user.birthDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" type="date" name="birth_date" id="birth_date" required>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-600" for="foto">Fotografía</label>
+            <input [(ngModel)]="user.photo" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" type="file" name="foto" id="foto" accept="image/*" required>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-600" for="biografia">Biografía Corta</label>
+            <textarea [(ngModel)]="user.biography" class="w-full h-12 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" name="biografia" id="biografia" placeholder="Agrega una biografía corta" required></textarea>
+          </div>
+        </div>
+        <div class="mb-6">
+          <button class="w-full px-4 py-2 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-200" type="submit">Guardar Informacion</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

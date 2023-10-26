@@ -1,0 +1,45 @@
+<div class="p-4 bg-gray-900 text-white">
+  <h1 class="text-2xl font-semibold mb-4">Registro de Paciente</h1>
+  <div class="bg-gray-800 p-12 shadow-lg rounded-lg">
+    <!-- Formulario de registro de paciente -->
+    <form (submit)="register()" method="POST">
+     
+
+      <!-- Datos personales -->
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold">Datos del Paciente</h2>
+        <label for="name" class="block">Nombre</label>
+        <input [(ngModel)]="patient.name" type="text" id="name" name="name" class="w-full border p-2 rounded-lg mb-2 bg-gray-700 text-white" />
+        <label for="age" class="block">Edad</label>
+        <input [(ngModel)]="patient.age" type="text" id="age" name="age" class="w-full border p-2 rounded-lg mb-2 bg-gray-700 text-white" />
+        <label for="admissionDate" class="block">Fecha de Alta</label>
+        <input [(ngModel)]="patient.date" type="date" id="admissionDate" name="admissionDate"
+          class="w-full border p-2 rounded-lg bg-gray-700 text-white" />
+        <label for="gender" class="block">Sexo</label>
+        <select [(ngModel)]="patient.gender" id="gender" name="gender" class="w-full border p-2 rounded-lg bg-gray-700 text-white">
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+        <!-- Agrega más detalles personales aquí -->
+      </div>
+
+      <!-- Historial médico -->
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold">Observaciones</h2>
+        <textarea [(ngModel)]="patient.history" id="medicalHistory" name="medicalHistory" rows="4"
+          class="w-full border p-2 rounded-lg bg-gray-700 text-white"></textarea>
+      </div>
+
+
+
+      <!-- Botón para enviar el formulario de registro -->
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+        Registrar Paciente
+      </button>
+      <div class="text-center text-red-" *ngIf="showError">
+        Debes llenar todos los campos
+      </div>
+    </form>
+  </div>
+</div>

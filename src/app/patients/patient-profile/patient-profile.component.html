@@ -1,0 +1,36 @@
+<div class="p-4" *ngIf="patient">
+  <h1 class="text-2xl font-semibold mb-4">Perfil del Paciente</h1>
+  <div class="bg-white p-4 shadow rounded-lg">
+    <!-- Foto de perfil -->
+    <div class="mb-4">
+      <img alt="Photo de perfil" [src]="patient.photo" [alt]="patient.name" (error)="loadBackupImage()" class="w-32 h-32 rounded-full mx-auto mb-2">
+      <h2 class="text-lg font-semibold text-center">{{ patient.name }}</h2>
+    </div>
+
+    <!-- Datos personales -->
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold">Datos del Paciente</h3>
+      <ul class="ml-4">
+        <li>Nombre: {{ patient.name }}</li>
+        <li>Edad: {{ patient.age }} años</li>
+        <li>Fecha de Alta: {{ patient.date }}</li>
+        <li>Sexo: {{ patient.gender }}</li>
+        <!-- Agrega más detalles personales aquí -->
+      </ul>
+    </div>
+
+    <!-- Historial médico -->
+    <div class="mb-4">
+      <h2 class="text-lg font-semibold">Observaciones</h2>
+      <ul class="ml-4">
+        <li *ngFor="let entry of patient.history">{{ entry }}</li>
+      </ul>
+    </div>
+   
+    <!-- Botones de acción -->
+    <div class="flex items-center justify-center space-x-4">
+      <button [routerLink]="['/update-patient', patient._id]" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Modificar</button>
+      <button [routerLink]="['/delete-patient', patientId]"   class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">Eliminar</button>
+    </div>
+  </div>
+</div>
